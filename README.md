@@ -33,12 +33,12 @@ $ npm install
 
 For development:
 ```sh
-$ gulp
+$ npm run dev
 ```
 Your finished site will be created in a folder called `dist`, viewable at this URL: `http://localhost:8000`
 
 ----
 For production release:
 ```sh
-$ gulp build
+$ npm run build
 ```
