@@ -4,7 +4,7 @@
   "description": "basic zurb-foundation boilerplate",
   "main": "gulpfile.babel.js",
   "scripts": {
-    "start": "gulp",
+    "dev": "gulp",
     "build": "gulp build --production"
   },
   "repository": {
