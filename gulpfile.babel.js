@@ -78,11 +78,8 @@ function sass() {
     .pipe(browser.reload({ stream: true }));
 }
 
-/**
-* TODO Configure Gulp and Webpack for production
-*/
 let webpackConfigDev = {
-  mode: "development",
+  mode: PRODUCTION ? "production" : "development",
   optimization: {
     splitChunks: {
       chunks: 'async',
@@ -128,7 +125,7 @@ function javascript() {
     .pipe(named())
     .pipe($.sourcemaps.init())
     .pipe(webpackStream(webpackConfigDev, webpack4))
-    .pipe($.if(PRODUCTION, $.uglify() //! Issue with PRODUCTION mode
+    .pipe($.if(PRODUCTION, $.uglify()
       .on('error', e => { console.log(e); })
     ))
     .pipe(rename({ suffix: '.min', prefix: '' }))
